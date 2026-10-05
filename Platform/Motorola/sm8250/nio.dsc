@@ -59,7 +59,7 @@
 
 [LibraryClasses.common]
   # Uses the existing SM8250 alioth memory map library
-  PlatformMemoryMapLib|Platform/Qualcomm/sm8250/Library/alioth/PlatformMemoryMapLib/PlatformMemoryMapLib.inf
+  PlatformMemoryMapLib|Silicon/Qualcomm/sm8250/Library/PlatformMemoryMapLib/PlatformMemoryMapLib.inf
 
   PlatformPeiLib|Silicon/Qualcomm/sm8250/Library/PlatformPeiLib/PlatformPeiLib.inf
   PlatformPrePiLib|Silicon/Qualcomm/sm8250/Library/PlatformPrePiLib/PlatformPrePiLib.inf
