@@ -10,12 +10,6 @@
 #
 ##
 
-################################################################################
-#
-# Defines Section - statements that will be processed to create a Makefile.
-#
-################################################################################
-
 [Defines]
   SOC_PLATFORM            = SM8250
   USE_PHYSICAL_TIMER      = FALSE
@@ -23,10 +17,10 @@
 !include Silicon/Qualcomm/QcomPkg/QcomCommonDsc.inc
 
 [PcdsFixedAtBuild.common]
-  gArmTokenSpaceGuid.PcdSystemMemoryBase|0x080000000         # Starting address
+  gArmTokenSpaceGuid.PcdSystemMemoryBase|0x080000000
   gArmTokenSpaceGuid.PcdSystemMemorySize|0x17CC00000
 
-  gArmTokenSpaceGuid.PcdCpuVectorBaseAddress|0x9FF8C000     # CPU Vectors
+  gArmTokenSpaceGuid.PcdCpuVectorBaseAddress|0x9FF8C000
   gArmTokenSpaceGuid.PcdArmArchTimerFreqInHz|19200000
   gArmTokenSpaceGuid.PcdArmArchTimerSecIntrNum|17
   gArmTokenSpaceGuid.PcdArmArchTimerIntrNum|18
@@ -34,30 +28,27 @@
   gArmTokenSpaceGuid.PcdGicRedistributorsBase|0x17a60000
 
   gEfiMdeModulePkgTokenSpaceGuid.PcdAcpiDefaultOemRevision|0x00000850
-  gEmbeddedTokenSpaceGuid.PcdPrePiStackBase|0x9ff90000      # UEFI Stack
-  gEmbeddedTokenSpaceGuid.PcdPrePiStackSize|0x00040000      # 256K stack
+  gEmbeddedTokenSpaceGuid.PcdPrePiStackBase|0x9ff90000
+  gEmbeddedTokenSpaceGuid.PcdPrePiStackSize|0x00040000
   gEmbeddedTokenSpaceGuid.PcdPrePiCpuIoSize|44
 
-  gQcomTokenSpaceGuid.PcdUefiMemPoolBase|0xC0000000         # DXE heap base address
-  gQcomTokenSpaceGuid.PcdUefiMemPoolSize|0x0E000000         # UefiMemorySize, DXE heap size
-  gQcomTokenSpaceGuid.PcdMipiFrameBufferAddress|0x9c000000
+  gQcomTokenSpaceGuid.PcdUefiMemPoolBase|0xC0000000
+  gQcomTokenSpaceGuid.PcdUefiMemPoolSize|0x0E000000
+
+  # Framebuffer & Display Settings for Motorola nio
+  gQcomTokenSpaceGuid.PcdMipiFrameBufferAddress|0x9C000000
+  gQcomTokenSpaceGuid.PcdMipiFrameBufferWidth|1080
+  gQcomTokenSpaceGuid.PcdMipiFrameBufferHeight|2520
 
   gArmPlatformTokenSpaceGuid.PcdCoreCount|8
   gArmPlatformTokenSpaceGuid.PcdClusterCount|3
 
-  #
   # SimpleInit
-  #
   gSimpleInitTokenSpaceGuid.PcdDeviceTreeStore|0x80650000
   gSimpleInitTokenSpaceGuid.PcdLoggerdUseConsole|FALSE
 
 [LibraryClasses.common]
-
-  # Ported from SurfaceDuoPkg
-  # AslUpdateLib|Silicon/Qualcomm/QcomPkg/Library/DxeAslUpdateLib/DxeAslUpdateLib.inf
-
   PlatformMemoryMapLib|Platform/$(VENDOR_NAME)/sm8250/Library/$(PLATFORM_NAME)/PlatformMemoryMapLib/PlatformMemoryMapLib.inf
-
   PlatformPeiLib|Silicon/Qualcomm/sm8250/Library/PlatformPeiLib/PlatformPeiLib.inf
   PlatformPrePiLib|Silicon/Qualcomm/sm8250/Library/PlatformPrePiLib/PlatformPrePiLib.inf
   MsPlatformDevicesLib|Silicon/Qualcomm/sm8250/Library/MsPlatformDevicesLib/MsPlatformDevicesLib.inf
