@@ -48,7 +48,9 @@
   gSimpleInitTokenSpaceGuid.PcdLoggerdUseConsole|FALSE
 
 [LibraryClasses.common]
-  PlatformMemoryMapLib|Platform/$(VENDOR_NAME)/sm8250/Library/$(PLATFORM_NAME)/PlatformMemoryMapLib/PlatformMemoryMapLib.inf
+  # Uses the existing SM8250 alioth memory map library
+  PlatformMemoryMapLib|Platform/Qualcomm/sm8250/Library/alioth/PlatformMemoryMapLib/PlatformMemoryMapLib.inf
+
   PlatformPeiLib|Silicon/Qualcomm/sm8250/Library/PlatformPeiLib/PlatformPeiLib.inf
   PlatformPrePiLib|Silicon/Qualcomm/sm8250/Library/PlatformPrePiLib/PlatformPrePiLib.inf
   MsPlatformDevicesLib|Silicon/Qualcomm/sm8250/Library/MsPlatformDevicesLib/MsPlatformDevicesLib.inf
