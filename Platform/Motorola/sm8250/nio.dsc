@@ -58,8 +58,8 @@
   gSimpleInitTokenSpaceGuid.PcdLoggerdUseConsole|FALSE
 
 [LibraryClasses.common]
-  # Uses the existing SM8250 alioth memory map library
-  PlatformMemoryMapLib|Silicon/Qualcomm/sm8250/Library/PlatformMemoryMapLib/PlatformMemoryMapLib.inf
+  # Motorola nio-specific SM8250 memory map
+  PlatformMemoryMapLib|Platform/Motorola/sm8250/Library/nio/PlatformMemoryMapLib/PlatformMemoryMapLib.inf
 
   PlatformPeiLib|Silicon/Qualcomm/sm8250/Library/PlatformPeiLib/PlatformPeiLib.inf
   PlatformPrePiLib|Silicon/Qualcomm/sm8250/Library/PlatformPrePiLib/PlatformPrePiLib.inf
