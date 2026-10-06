@@ -1,0 +1,17 @@
+[Defines]
+  INF_VERSION                    = 0x0001001B
+  BASE_NAME                      = PlatformMemoryMapLib
+  FILE_GUID                      = 4E4E5F84-7E8A-4DB1-8D6E-9E7E5C7B1A21
+  MODULE_TYPE                    = BASE
+  VERSION_STRING                 = 1.0
+  LIBRARY_CLASS                 = PlatformMemoryMapLib
+
+[Sources]
+  PlatformMemoryMapLib.c
+
+[Packages]
+  ArmPkg/ArmPkg.dec
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  EmbeddedPkg/EmbeddedPkg.dec
+  Silicon/Qualcomm/QcomPkg/QcomPkg.dec
